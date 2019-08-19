@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntivirusTesting", "AntivirusTesting\AntivirusTesting.csproj", "{449603D4-0717-46DF-82D6-CEC9E5BAA1E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntivirusTesting.Tests", "AntivirusTesting.Tests\AntivirusTesting.Tests.csproj", "{3B2BBACD-43E7-4F24-9F9C-8A8C8BFD19BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{449603D4-0717-46DF-82D6-CEC9E5BAA1E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{449603D4-0717-46DF-82D6-CEC9E5BAA1E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{449603D4-0717-46DF-82D6-CEC9E5BAA1E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{449603D4-0717-46DF-82D6-CEC9E5BAA1E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B2BBACD-43E7-4F24-9F9C-8A8C8BFD19BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B2BBACD-43E7-4F24-9F9C-8A8C8BFD19BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B2BBACD-43E7-4F24-9F9C-8A8C8BFD19BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B2BBACD-43E7-4F24-9F9C-8A8C8BFD19BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8EBE6FE3-1553-4A05-B808-8924DD857E8C}
+	EndGlobalSection
+EndGlobal
