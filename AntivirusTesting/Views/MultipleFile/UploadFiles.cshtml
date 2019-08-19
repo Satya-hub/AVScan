@@ -1,0 +1,116 @@
+﻿@model AntivirusTesting.Models.FileUploadSample.MultipleFileModel
+@{
+    ViewBag.Title = "Upload Multiple Files";
+}
+
+<h2>UploadFiles</h2>
+
+@using (Html.BeginForm("UploadFiles", "MultipleFile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.files, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.files, "", new { @type = "file", @multiple = "multiple" })
+                @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" name="Upload" value="Upload" class="btn btn-primary" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" name="Submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-success">
+                @ViewBag.UploadStatus
+            </div>
+        </div>
+
+
+        @if (Session["fileUploader"] != null)
+
+        {
+
+            <div class="upload">
+
+                <div style="width: 500px;">
+
+                    <table id="uloadTable" border="1">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Name</th>
+
+                                <th>Action</th>
+
+                                <th>Is Scanned</th>
+
+                                <th>Is Infected</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            @foreach (var item in (List<AntivirusTesting.Models.FileUploadSample.MultipleFileModel>)Session["fileUploader"])
+
+                            {
+
+                            <tr id="@item.FileName">
+
+                                <td>@item.FileName</td>
+
+                                <td style="text-align: center">
+                                    <a class="viewc" href="@Url.Action("OpenFile", "FileUpload", new { @fileName = item.FileName })">
+
+                                        <img width="16" height="16" border="0" src="~/Images/viewIcon.jpeg" class="viewc">
+                                    </a>
+
+                                    <a class="viewc" href="">
+
+                                        <img width="16" height="16" border="0" src="~/Images/DeleteIcon.jpeg" class="link">
+                                    </a>
+                                </td>
+
+                                <td>Yes</td>
+
+                                <td>No</td>
+
+                            </tr>
+
+                            }
+
+
+
+                        </tbody>
+
+                    </table>
+
+
+
+                </div>
+
+            </div>
+
+        }
+
+
+    </div>
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
