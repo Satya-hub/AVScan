@@ -205,6 +205,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\deletedicon.jpg" />
+    <Content Include="Images\Right.png" />
+    <Content Include="Images\viewicon.jpg" />
+    <Content Include="Images\wrong.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -257,7 +261,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\" />
     <Folder Include="LogReport\" />
     <Folder Include="MyFiles\" />
     <Folder Include="TempFiles\" />
