@@ -77,8 +77,13 @@ namespace AntivirusTesting.Controllers
                         string moveTo = Path.Combine(destinationPath, file);
                         //moving file
                         System.IO.File.Move(fileToMove, moveTo);
+                        Dictionary<string, string> listOfFiles = new Dictionary<string, string>();
+                        listOfFiles.Add(file, moveTo);
+                        AntivirusTesting.Utility.Testing.Execute(listOfFiles);
                     }
                 }
+               
+
             }
             return View();
         }

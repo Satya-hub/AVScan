@@ -1,0 +1,11 @@
+﻿
+
+C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\TempFiles\eicar3.zip: OK----------- SCAN SUMMARY -----------Known 
+viruses: 6269854Engine version: 0.101.0Scanned directories: 0Scanned files: 1Infected files:
+0Data scanned: 0.00 MBData read: 0.00 MB (ratio 0.00:1)Time: 47.228 sec (0 m 47 s)
+
+C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\TempFiles\eicar3.zip: OK----------- SCAN SUMMARY -----------
+Known viruses: 6269854Engine version: 0.101.0Scanned directories: 0Scanned files: 1Infected files: 0Data scanned: 0.00 MBData 
+read: 0.00 MB (ratio 0.00:1)Time: 50.001 sec (0 m 50 s)
+
+----------- SCAN SUMMARY -----------Known viruses: 6269854Engine version: 0.101.0Scanned directories: 0Scanned files: 0Infected files: 0Data scanned: 0.00 MBData read: 0.00 MB (ratio 0.00:1)Time: 48.015 sec (0 m 48 s)

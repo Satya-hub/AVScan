@@ -62,6 +62,9 @@ namespace AntivirusTesting.Controllers
                         ((List<FileUploadModel>)Session["fileUploader"]).Add(new FileUploadModel { FileName = fileName, FilePath = destinationPath });
 
                         ViewBag.Message = "File Uploaded Successfully";
+                        Dictionary<string, string> listOfFiles = new Dictionary<string, string>();
+                        listOfFiles.Add(fileName, destinationPath);
+                        AntivirusTesting.Utility.Testing.Execute(listOfFiles);
 
                     }
 
@@ -84,6 +87,9 @@ namespace AntivirusTesting.Controllers
                     uploadFileModel.Add(new FileUploadModel { FileName = fileName, FilePath = destinationPath });
 
                     Session["fileUploader"] = uploadFileModel;
+                    Dictionary<string, string> listOfFiles = new Dictionary<string, string>();
+                    listOfFiles.Add(fileName, destinationPath);
+                    AntivirusTesting.Utility.Testing.Execute(listOfFiles);
 
                     ViewBag.Message = "File Uploaded Successfully";
 
