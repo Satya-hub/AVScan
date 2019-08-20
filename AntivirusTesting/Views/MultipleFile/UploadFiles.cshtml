@@ -69,27 +69,26 @@
 
                             {
 
-                            <tr id="@item.FileName">
+                                <tr id="@item.FileName">
 
-                                <td>@item.FileName</td>
+                                    <td>@item.FileName</td>
 
-                                <td style="text-align: center">
-                                    <a class="viewc" href="@Url.Action("OpenFile", "FileUpload", new { @fileName = item.FileName })">
+                                    <td style="text-align: center">
+                                        <a class="viewc" href="@Url.Action("OpenFile", "FileUpload", new { @fileName = item.FileName })">
 
-                                        <img width="16" height="16" border="0" src="~/Images/viewIcon.jpeg" class="viewc">
-                                    </a>
+                                            <img width="16" height="16" border="0" src="~/Images/viewIcon.jpg" class="viewc">
+                                        </a>
 
-                                    <a class="viewc" href="">
 
-                                        <img width="16" height="16" border="0" src="~/Images/DeleteIcon.jpeg" class="link">
-                                    </a>
-                                </td>
+                                    </td>
 
-                                <td>Yes</td>
+                                    <td><img width="16" height="16" border="0" src="@Url.Content(String.Format("~/Images/{0}", item.IsScanned ? "Right.png" : "wrong.png" ))" /></td>
 
-                                <td>No</td>
+                                    <td><img width="16" height="16" border="0" src="@Url.Content(String.Format("~/Images/{0}", item.IsInfected ? "Right.png" : "wrong.png"))" /></td>
 
-                            </tr>
+                                </tr>
+
+
 
                             }
 
