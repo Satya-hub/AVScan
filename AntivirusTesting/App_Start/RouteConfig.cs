@@ -16,7 +16,7 @@ namespace AntivirusTesting
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "FileUploadSample", action = "FileUpload", id = UrlParameter.Optional }
+                defaults: new { controller = "MultipleFile", action = "UploadFiles", id = UrlParameter.Optional }
             );
         }
     }

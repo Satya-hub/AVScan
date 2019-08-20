@@ -24,6 +24,7 @@ namespace AntivirusTesting.Controllers
             //Ensure model state is valid  
             if (ModelState.IsValid)
             {
+
                 if (!string.IsNullOrEmpty(Upload))
                 {
 
@@ -54,7 +55,7 @@ namespace AntivirusTesting.Controllers
                             file.SaveAs(ServerSavePath);
                             uploadFileModel.Add(new MultipleFileModel { FileName = file.FileName, FilePath = destinationPath });
                             //assigning file uploaded status to ViewBag for showing message to user.  
-                            ViewBag.UploadStatus = files.Count().ToString() + " files uploaded successfully.";
+
                         }
 
                     }
@@ -64,6 +65,9 @@ namespace AntivirusTesting.Controllers
                     ViewBag.Message = "File Uploaded Successfully";
 
                     EndTIme = DateTime.Now;
+
+                    ViewBag.UploadStatus = files.Count().ToString() + " files" + "With file size : " + files.Select(f => f.ContentLength).Sum().ToString() + " kb uploaded successfully in " + EndTIme.Subtract(StartTime).ToString() + " Secs";
+
                     WriteLog("Vikash", StartTime, EndTIme);
                 }
                 if (!string.IsNullOrEmpty(Submit))
@@ -92,7 +96,7 @@ namespace AntivirusTesting.Controllers
 
         public void WriteLog(string LogData, DateTime starttime, DateTime endtime)
         {
-            System.TimeSpan diffResult = starttime.Subtract(endtime);
+            System.TimeSpan diffResult = endtime.Subtract(starttime);
             string createText = Environment.NewLine + "Start Time : " + starttime.ToString() + Environment.NewLine + LogData + Environment.NewLine + "End Time : " + endtime.ToString() + Environment.NewLine + "Total time taken to process file : " + diffResult.ToString() + Environment.NewLine + "**********************";
             string path = Server.MapPath("~/LogReport/LogReport");
             System.IO.File.AppendAllText(path, createText);
