@@ -39,8 +39,8 @@ namespace AntivirusTesting.Controllers
                     List<MultipleFileModel> uploadFileModel = new List<MultipleFileModel>();
 
 
-                    destinationPath = Path.Combine(Server.MapPath("~/TempFiles/"), fileName);
 
+                    Dictionary<string, string> listOfFiles = new Dictionary<string, string>();
 
 
                     //iterating through multiple file collection   
@@ -49,14 +49,21 @@ namespace AntivirusTesting.Controllers
                         //Checking file is available to save.  
                         if (file != null)
                         {
+                            destinationPath = Path.Combine(Server.MapPath("~/TempFiles/"), file.FileName);
                             var InputFileName = Path.GetFileName(file.FileName);
                             var ServerSavePath = Path.Combine(Server.MapPath("~/TempFiles/") + InputFileName);
                             //Save file to server folder  
                             file.SaveAs(ServerSavePath);
-                            uploadFileModel.Add(new MultipleFileModel { FileName = file.FileName, FilePath = destinationPath });
+                            
                             //assigning file uploaded status to ViewBag for showing message to user.  
+                            listOfFiles.Add(file.FileName, destinationPath);
+                            AntivirusTesting.Utility.Testing testing = new AntivirusTesting.Utility.Testing();
+                            var infected = testing.Execute(listOfFiles);
+                            uploadFileModel.Add(new MultipleFileModel { FileName = file.FileName, FilePath = destinationPath, ScanReport = infected });
 
                         }
+                      
+                       
 
                     }
 
@@ -66,7 +73,7 @@ namespace AntivirusTesting.Controllers
 
                     EndTIme = DateTime.Now;
 
-                    ViewBag.UploadStatus = files.Count().ToString() + " files" + "With file size : " + files.Select(f => f.ContentLength).Sum().ToString() + " kb uploaded successfully in " + EndTIme.Subtract(StartTime).ToString() + " Secs";
+                    ViewBag.UploadStatus = files.Count().ToString() + " files " + files.Select(f => f.ContentLength).Sum().ToString() + " kb " + EndTIme.Subtract(StartTime).ToString() + " Secs";
 
                     WriteLog("Vikash", StartTime, EndTIme);
                 }
@@ -83,7 +90,8 @@ namespace AntivirusTesting.Controllers
                         System.IO.File.Move(fileToMove, moveTo);
                         Dictionary<string, string> listOfFiles = new Dictionary<string, string>();
                         listOfFiles.Add(file, moveTo);
-                        AntivirusTesting.Utility.Testing.Execute(listOfFiles);
+                        AntivirusTesting.Utility.Testing testing = new AntivirusTesting.Utility.Testing();
+                        testing.Execute(listOfFiles);
                     }
                 }
                

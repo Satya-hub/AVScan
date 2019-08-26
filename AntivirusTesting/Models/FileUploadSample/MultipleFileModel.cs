@@ -17,5 +17,7 @@ namespace AntivirusTesting.Models.FileUploadSample
 
         public bool IsScanned { get; set; }
         public bool IsInfected { get; set; }
+
+        public string ScanReport { get; set; }
     }
 }

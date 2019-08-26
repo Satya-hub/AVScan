@@ -19,9 +19,3 @@ C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\TempFiles\ei
 C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\TempFiles\eicar.zip: Eicar-Test-Signature FOUND----------- SCAN SUMMARY -----------Known viruses: 6284735Engine version: 0.101.0Scanned directories: 0Scanned files: 1Infected files: 1Data scanned: 0.00 MBData read: 0.00 MB (ratio 0.00:1)Time: 43.091 sec (0 m 43 s)
 
 C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\TempFiles\eicar2.zip: Eicar-Test-Signature FOUND----------- SCAN SUMMARY -----------Known viruses: 6284735Engine version: 0.101.0Scanned directories: 0Scanned files: 1Infected files: 1Data scanned: 0.00 MBData read: 0.00 MB (ratio 0.00:1)Time: 44.173 sec (0 m 44 s)
-
-C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\TempFiles\eicar.zip: Eicar-Test-Signature FOUND----------- SCAN SUMMARY -----------Known viruses: 6284735Engine version: 0.101.0Scanned directories: 0Scanned files: 1Infected files: 1Data scanned: 0.00 MBData read: 0.00 MB (ratio 0.00:1)Time: 44.311 sec (0 m 44 s)
-
-C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\TempFiles\eicar.zip: Eicar-Test-Signature FOUND----------- SCAN SUMMARY -----------Known viruses: 6284735Engine version: 0.101.0Scanned directories: 0Scanned files: 1Infected files: 1Data scanned: 0.00 MBData read: 0.00 MB (ratio 0.00:1)Time: 45.474 sec (0 m 45 s)
-
-C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\TempFiles\eicar2.zip: Eicar-Test-Signature FOUND----------- SCAN SUMMARY -----------Known viruses: 6284735Engine version: 0.101.0Scanned directories: 0Scanned files: 1Infected files: 1Data scanned: 0.00 MBData read: 0.00 MB (ratio 0.00:1)Time: 46.210 sec (0 m 46 s)

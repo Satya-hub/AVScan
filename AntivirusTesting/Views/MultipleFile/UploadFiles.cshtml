@@ -3,7 +3,7 @@
     ViewBag.Title = "Upload Multiple Files";
 }
 
-<h2>UploadFiles</h2>
+<h2>Test Infected Files</h2>
 
 @using (Html.BeginForm("UploadFiles", "MultipleFile", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -24,11 +24,11 @@
                 <input type="submit" name="Upload" value="Upload" class="btn btn-primary" />
             </div>
         </div>
-        <div class="form-group">
+        @*<div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" name="Submit" value="Submit" class="btn btn-primary" />
             </div>
-        </div>
+        </div>*@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10 text-success">
                 @ViewBag.UploadStatus
@@ -52,11 +52,9 @@
 
                                 <th>Name</th>
 
-                                <th>Action</th>
+                                @*<th>Action</th>*@
 
-                                <th>Is Scanned</th>
-
-                                <th>Is Infected</th>
+                                <th>File Infected Scanned Size</th>
 
                             </tr>
 
@@ -69,24 +67,26 @@
 
                             {
 
-                                <tr id="@item.FileName">
+                            <tr id="@item.FileName">
 
-                                    <td>@item.FileName</td>
+                                <td>@item.FileName</td>
 
-                                    <td style="text-align: center">
-                                        <a class="viewc" href="@Url.Action("OpenFile", "FileUpload", new { @fileName = item.FileName })">
+                                @*<td style="text-align: center">
+                                    <a class="viewc" href="@Url.Action("OpenFile", "FileUpload", new { @fileName = item.FileName })">
 
-                                            <img width="16" height="16" border="0" src="~/Images/viewIcon.jpg" class="viewc">
-                                        </a>
+                                        <img width="16" height="16" border="0" src="~/Images/viewIcon.jpg" class="viewc">
+                                    </a>
 
 
-                                    </td>
+                                </td>*@
+                                <td>@item.ScanReport</td>
 
-                                    <td><img width="16" height="16" border="0" src="@Url.Content(String.Format("~/Images/{0}", item.IsScanned ? "Right.png" : "wrong.png" ))" /></td>
 
-                                    <td><img width="16" height="16" border="0" src="@Url.Content(String.Format("~/Images/{0}", item.IsInfected ? "Right.png" : "wrong.png"))" /></td>
+        @*<td><img width="16" height="16" border="0" src="@Url.Content(String.Format("~/Images/{0}", item.IsScanned ? "Right.png" : "wrong.png" ))" /></td>
 
-                                </tr>
+        <td><img width="16" height="16" border="0" src="@Url.Content(String.Format("~/Images/{0}", item.IsInfected ? "Right.png" : "wrong.png"))" /></td>*@
+
+                            </tr>
 
 
 

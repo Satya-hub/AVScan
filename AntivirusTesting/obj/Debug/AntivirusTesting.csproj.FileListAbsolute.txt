@@ -223,3 +223,4 @@ C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\obj\Debug\An
 C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\obj\Debug\AntivirusTesting.csproj.CopyComplete
 C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\obj\Debug\AntivirusTesting.dll
 C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\obj\Debug\AntivirusTesting.pdb
+C:\Users\Satya.swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\bin\TextFile1.txt

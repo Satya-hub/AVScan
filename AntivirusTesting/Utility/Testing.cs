@@ -8,31 +8,36 @@ using System.Web;
 
 namespace AntivirusTesting.Utility
 {
-    public static class Testing
+    public class Testing
     {
-        public static void Execute(Dictionary<string, string> mylist)
+        public string Execute(Dictionary<string, string> mylist)
         {
             int count = 0;
             using (var ps = PowerShell.Create())
             {
                 //var results =  ps.AddScript(command).Invoke();
                 var results = new System.Collections.ObjectModel.Collection<PSObject>();
-                String str = "" + "\n\n";
-                using (StreamWriter outfile = new StreamWriter(@"C:\Users\Satya.Swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\TextFile1.txt", true))
+                var infectedstatus =  "";
+                using (StreamWriter outfile = new StreamWriter(@"C:\Users\Satya.swain\Source\Repos\Satya-hub\AVScan\AntivirusTesting\TextFile1.txt", true))
                 {
                     foreach (var item in mylist)
                     {
-                        var command = @"C:\Users\Satya.Swain\Downloads\clamav-0.101.0-win-x64-portable\clamscan --recursive " + item.Value;
+                        String str = "" + "\n\n";
+                        var command = @"D:\ClamAV\clamscan " + item.Value;
                         results = ps.AddScript(command).Invoke();
                         foreach (var result in results)
                         {
                             str += result.ToString();
                             Debug.Write(result.ToString());
-                            count++;
+                            
                         }
+                        infectedstatus = results[7].BaseObject.ToString() + " , " + results[6].BaseObject.ToString() + " , " + results[8].BaseObject.ToString();
+                        count++;
+                        outfile.Write(str.ToString());
                     }
-                    outfile.Write(str.ToString());
+                    
                 }
+                return infectedstatus;
                 //await void.ConfigureAwait(false);
                 //var resultProperty = void.GetType().GetProperty("Result");
                 //var results = resultProperty.GetValue(void);
